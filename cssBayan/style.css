@@ -1,11 +1,12 @@
 /* common initial styles */
 body{
+  padding: 0 15px;
   background-color: whitesmoke;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 p, label{
-  font-size: 1.35em;
+  font-size: 1.5em;
 }
 
 label{
@@ -47,6 +48,12 @@ img{
 .header{
   max-width: 50em;
   margin: 0 auto;
+}
+
+.header h1 {
+  margin: 5px 0;
+  font-size: 3em;
+  transition: .2s;
 }
 
 .accordion{
@@ -108,4 +115,62 @@ img{
 .key:active .key__content .key__imgBox:not(input:checked + .key__content .key__imgBox){
   box-shadow: 0px 0px 15px 1px #1032e0;
   transition: .2s;
+}
+
+/* Adaptive */
+/* It's allowed to use px for media queries! */
+@media (max-width: 1919px){
+  .header h1 {
+    margin: 5px 0;
+    font-size: 2.5em;
+  }
+
+  p, label{
+    font-size: 1.35em;
+  }
+}
+
+@media (max-width: 819px){
+  body{
+    padding: 0 10px;
+  }
+
+  body hr{
+    margin: .8em 0;
+  }
+
+  .header h1 {
+    margin: 5px 0;
+    font-size: 2em;
+  }
+
+  p, label{
+    font-size: 1.15em;
+  }
+}
+
+/* Media for devices which don't support hover and active states  */
+@media (hover: none) and (pointer: coarse){
+  .accordion{
+    cursor: unset;
+  }
+  .accordion *{
+    cursor: unset;
+  }
+
+  .accordion .key .key__content .key__title{
+    color: #1032e0 !important;
+  }
+  
+  .accordion .key i{
+    opacity: 1;
+  }
+  
+  .accordion .key .key__content .key__title i {
+    transform: rotate(0deg);
+  }
+  
+  .accordion .key:active .key__content .key__imgBox{
+    width: 0;
+  }
 }
