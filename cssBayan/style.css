@@ -24,17 +24,18 @@ input{
   display: none;
 }
 
-input:checked + .key__content .key__imgBox{
+.key input:checked + .key__content .key__imgBox{
   width: 100%;
 }
 
-input:checked + .key__content .key__title .key__quote{
+.key input:checked + .key__content .key__title .key__quote{
   text-decoration: underline;
   color: black;
 }
 
-input:checked + .key__content .key__title i {
+.key input:checked + .key__content .key__title i {
   transform: rotate(45deg);
+  color: black;
 }
 
 img{
